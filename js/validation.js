@@ -26,6 +26,48 @@ function checkInputs(){
         setSuccessFor(username);
     }
 
+    if(emailValue === ""){
+        setErrorFor(email,"O email é obrigatório");
+    }else if(!checkEmail(emailValue)){
+        setErrorFor(email,"Por favor, digite um email válido!");
+    }else{
+        setSuccessFor(email)
+    }
+
+    if(emailConfirmationValue === ""){
+        setErrorFor(emailConfirmation,"A confirmação de e-mail é obrigatória!");
+    }else if(emailValue !== emailConfirmationValue){
+        setErrorFor(emailConfirmation, "Email não confere")
+    }else{
+        setSuccessFor(emailConfirmation);
+    }
+
+    if(passwordValue === ""){
+        setErrorFor(password,"A senha é obrigatória!");
+    }else if(passwordValue.length < 8){
+        setErrorFor(password,"A senha tem que ter no mínimo 8 caracteres!")
+    }else{
+        setSuccessFor(password);
+    }
+
+    if(passwordConfirmationValue === ""){
+        setErrorFor(passwordConfirmation, "A confirmação de senha é obrigatória!");
+    }else if(passwordValue !== passwordConfirmationValue){
+        setErrorFor(passwordConfirmation,"As senhas digitadas não conferem!");
+    }else{
+        setSuccessFor(passwordConfirmation);
+    }
+
+    const formControls = form.querySelectorAll(".form-control");
+
+    const formIsValid = [...formControls].every((formControl) => {
+        return formControl.className === "form-control success";
+    });
+
+    if (formIsValid) {
+    console.log("O formulário está 100% válido!");
+    }
+
 }
 
 function setErrorFor(input, message) {
