@@ -24,9 +24,10 @@ body{
 }
 
 .header, h2{
-    background-color:  #eee;
-    padding: 20px;
+    background-color:  #c5a1f5;
+    padding: 15px;
     text-align: center;
+    color: #fff;
 }
 
 .form{
