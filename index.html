@@ -2,58 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
-    <title>Cadastro de usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário GN</title>
 </head>
-    <div class="container">
-        <div class="header">
-            <h2>Criar conta</h2>
-        </div>
-        <form action="#" method="POST" class="form" id="form">
-            <div class="form-control">
-                <label for="username">Nome:</label>
-                <input type="text" id="username" placeholder="Digite seu nome..." oninput="checkInputs()">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
+<body>
+    <div class="content">
+        <h1>Formulário 🔥</h1>
+        <form id="form">
+            <div>
+                <input type="text" placeholder="Digite seu nome" class="inputs required" oninput="nameValidate()">
+                <span class="span-required">Nome deve ter no mínimo 3 caracteres</span>
             </div>
-            <div class="form-control">
-                <label for="email">Email:</label>
-                <input type="text" id="email" placeholder="Digite seu email..." oninput="checkInputs()">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
+            <div>
+                <input type="email" placeholder="Digite seu melhor email" class="inputs required" oninput="emailValidate()">
+                <span class="span-required">Digite um email válido</span>
             </div>
-            <div class="form-control">
-                <label for="email-confirmation">Confirmar Email:</label>
-                <input type="text" id="email-confirmation" placeholder="Digite seu novamente seu email..." oninput="checkInputs()">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
+            <div>
+                <input type="password" placeholder="Senha" class="inputs required" oninput="mainPasswordValidate()">
+                <span class="span-required">Digite uma senha com no mínimo 8 caracteres</span>
             </div>
-            <div class="form-control">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" placeholder="Digite uma senha..." oninput="checkInputs()">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
+            <div>
+                <input type="password" placeholder="Repita a sua senha" class="inputs required" oninput="comparePassword()">
+                <span class="span-required">Senhas devem ser compatíveis</span>
             </div>
-            <div class="form-control">
-                <label for="password-confirmation">Confirmar Senha:</label>
-                <input type="password" id="password-confirmation" placeholder="Digite novamente a senha..." oninput="checkInputs()">
-                <i class="fas fa-exclamation-circle"></i>
-                <i class="fas fa-check-circle"></i>
-                <small>Mensagem de erro</small>
+            <textarea class="inputs" name="descricao" id="descricao" cols="25" rows="10" placeholder="Fale um pouco sobre você..."></textarea>
+            <p>Sexo:</p>
+            <div class="box-select">
+                <div>
+                    <input type="radio" id="m" value="m" name="sexo">
+                    <label for="m">Masculino</label>
+                </div>
+                <div>
+                    <input type="radio" id="f" value="f" name="sexo">
+                    <label for="f">Feminino</label>
+                </div>
+                <div>
+                    <input type="radio" id="o" value="o" name="sexo">
+                    <label for="o">Outro</label>
+                </div>
+            </div>
+            <p>Quais suas experiências ?</p>
+            <div class="box-select">
+                <div>
+                    <input type="checkbox" id="html" value="html" name="experiencias">
+                    <label for="html">Html</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="css" value="css" name="experiencias">
+                    <label for="css">Css</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="js" value="js" name="experiencias">
+                    <label for="js">JavaScript</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="php" value="php" name="experiencias">
+                    <label for="php">PHP</label>
+                </div>
             </div>
             <button type="submit">Enviar</button>
         </form>
     </div>
-
-    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
-    <script src="js/validation.js"></script>
 </body>
 </html>
